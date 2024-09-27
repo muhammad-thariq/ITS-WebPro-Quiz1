@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5 Page Website</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet"> <!-- Inter font -->
+    <style>
+        /* Ensure links inherit the text color */
+        a {
+            color: inherit;
+            text-decoration: underline; /* Keeps the underline on links */
+        }
+        a:hover {
+            text-decoration: underline; /* Optional: keeps underline on hover */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="snap-container">
+        <!-- Section 1: Image Area and Content -->
+        <section class="page_left">
+            <div class="svg-overlay-top">
+                <img src="elements/wave2.svg" alt="Wave SVG">
+            </div>
+            <div class="image-section fade-left">
+                <!-- Autoplay video -->
+                <video id="video" class="video-section" autoplay muted loop>
+                    <source src="elements/video3.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            
+            <div class="content-section content-dark">
+                <!-- Navigation Links -->
+                <ul class="nav">
+                    <li><a href="Hello.html" class="und">Hello</a></li>
+                    <li><a href="Profile.html">Profile</a></li>
+                    <li><a href="Hometown.html">Hometown</a></li>
+                    <li><a href="Food.html">Food</a></li>
+                    <li><a href="Tourism.html">📌 Tourism</a></li>
+                </ul>
+                <h1>Adventure!?</h1>
+                <br>
+                <p>Bekasi, a bustling city just outside Jakarta, offers a variety of attractions for both locals and tourists. One of the notable destinations is <a href="https://g.co/kgs/mGcEK4R" target="_blank">Danau BCBD Sumarecon</a>, a beautiful lake surrounded by lush greenery, perfect for relaxing and enjoying nature. Visitors can engage in various activities such as jogging, cycling, or simply enjoying a picnic by the water. Another popular spot is <a href="https://g.co/kgs/34vU1wD" target="_blank">GOR Bekasi</a>, an indoor sports arena that hosts various events and competitions, from basketball to badminton. It serves as a hub for sports enthusiasts and offers facilities for training and community events. With its blend of natural beauty and sports facilities, Bekasi is an emerging destination for tourism, catering to a wide range of interests and activities.</p>
+            </div>
+            <div class="svg-overlay">
+                <img src="elements/wave2.svg" alt="Wave SVG">
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

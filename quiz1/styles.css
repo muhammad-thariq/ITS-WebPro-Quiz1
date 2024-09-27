@@ -1,0 +1,257 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body, html {
+    height: 100%;
+    overflow: hidden; /* Prevent scrolling on the body */
+    background-color: rgb(0, 0, 0); /* Ensure background is consistent */
+}
+
+.snap-container {
+    height: 100vh; /* Set container height to fill viewport */
+    overflow-y: auto; /* Enable scrolling for the container */
+    background-color: rgb(0, 0, 0); /* Ensure no gaps between sections */
+}
+
+.page_left {
+    display: flex;
+    height: 100vh; /* Each section still takes full viewport height */
+    position: relative; /* Make position relative for SVG overlay */
+    background-color: rgb(0, 0, 0); /* Match the section background */
+}
+
+.page_right {
+    display: flex;
+    flex-direction: row-reverse; /* This will move the image to the right side */
+    height: 100vh;
+    position: relative;
+    background-color: rgb(0, 0, 0);
+}
+
+.image-section {
+    flex: 0 0 auto;
+    width: calc(100vh * 9 / 16); /* Maintain 9:16 aspect ratio for the image */
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    /* background-color: rgb(0, 0, 0);  */
+}
+
+.image-section img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* SVG overlay for the top of every page */
+.svg-overlay-top {
+    position: absolute;
+    top: -5px; /* Drag the SVG slightly up */
+    left: 0;
+    width: 100%; /* Make the SVG span the full width of the viewport */
+    height: auto;
+    z-index: 10; /* Ensure the SVG is above the image and content */
+}
+
+.svg-overlay-top img {
+    width: 100%; /* Stretch SVG to full width */
+    height: auto;
+    transform: rotate(180deg); /* Flip the SVG for the top */
+    margin-top: -5px; /* Slightly pull up the SVG */
+}
+
+/* SVG overlay for the bottom of every page */
+.svg-overlay {
+    position: absolute;
+    bottom: -5px; /* Drag the SVG slightly down */
+    left: 0;
+    width: 100%; /* Make the SVG span the full width of the viewport */
+    height: auto;
+    z-index: 10; /* Ensure the SVG is above the image and content */
+}
+
+.svg-overlay img {
+    width: 100%; /* Stretch SVG to full width */
+    height: auto;
+    margin-bottom: -5px; /* Slightly pull down the SVG */
+}
+
+.content-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column; /* Stack content vertically */
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 20px;
+    padding: 20px;
+    position: relative; /* Allow z-index stacking */
+    z-index: 5; /* Ensure content is below the SVG */
+}
+
+/* Styles for h1 */
+.content-section h1 {
+    margin-bottom: 20px; /* Add some space between h1 and paragraph */
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+
+/* Justify the paragraph */
+.content-section p {
+    text-align: justify; /* Justifies the text */
+    max-width: 80%; /* Limits the width of the paragraph for better readability */
+    font-size: 1.2rem; /* Adjust font size */
+    line-height: 1.6; /* Adjust line height for readability */
+}
+
+/* Styles for Content 1, 3, 5 */
+.content-dark {
+    background-color: rgb(0, 0, 0); /* Dark background */
+    color: white; /* White text */
+}
+
+/* Styles for Content 2, 4 */
+.content-light {
+    background-color: rgb(48, 48, 48); /* Slightly darker background */
+    color: rgb(255, 255, 255); /* White text */
+}
+
+/* Image gradient overlay for sections 1, 3, 5 */
+/* .page:nth-child(1) .image-section::before,
+.page:nth-child(3) .image-section::before,
+.page:nth-child(5) .image-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 75%;
+    background: linear-gradient(to left, black, transparent);
+    z-index: 1;
+}
+
+.page:nth-child(3) .image-section::before {
+    right: 75%;
+    left: 0;
+    background: linear-gradient(to right, black, transparent);
+} */
+
+
+
+.nav {
+    list-style: none; /* Remove bullet points */
+    padding: 0; /* Remove padding */
+    position: absolute; /* Position absolutely within content section */
+    top: 25%; /* Adjust to desired distance from the top */
+    left: 0; /* Align to the left */
+    right: 0; /* Align to the right */
+    display: flex; /* Apply flexbox */
+    justify-content: space-around; /* Evenly space the items */
+    margin: 0 auto; /* Center the navigation */
+    max-width: 80%; /* Set the same max-width as paragraph */
+}
+
+.nav li {
+    display: inline; /* Display links inline */
+    margin: 0 15px; /* Adjust spacing between links */
+}
+
+.nav a {
+    color: white; /* Link color */
+    font-weight: 600; /* Bold links */
+    transition: text-shadow 0.3s ease; /* Smooth transition for color and shadow change */
+}
+
+.underline {
+    text-decoration: underline; /* Add underline */
+}
+
+.nav a:hover {
+    text-shadow: 0 0 1000 white; /* Add white glow effect */
+}
+
+/* Styles for h1 */
+.content-section h1 {
+    margin-top: 60px; /* Space for navigation */
+    margin-bottom: 20px; 
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+
+/* Justify the paragraph */
+.content-section p {
+    text-align: justify; /* Justifies the text */
+    max-width: 80%; /* Limits the width of the paragraph for better readability */
+    font-size: 1.2rem; /* Adjust font size */
+    line-height: 1.6; /* Adjust line height for readability */
+}
+
+
+/* Image gradient overlay for sections 1, 3, 5 */
+.page_left .image-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 75%;
+    background: linear-gradient(to left, black, transparent);
+    z-index: 1;
+}
+.page_left2 .image-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 90%;
+    background: linear-gradient(to left, black, transparent);
+    z-index: 1;
+}
+
+.page_right .image-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 80%;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(to right, black, transparent);
+    z-index: 1;
+} 
+
+/* Video section (autoplay video) */
+.video-section {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0.1; /* Ensures video is behind the content */
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+.typing-effect {
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 2px solid; /* Cursor effect */
+    width: 0;
+    animation: typing 2s steps(30, end), blink-caret 0.75s step-end infinite;
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: black; }
+}
+
